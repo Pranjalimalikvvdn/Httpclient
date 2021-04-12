@@ -1,0 +1,85 @@
+<div class="container">
+    <h3>Registration Form</h3>
+    <div class="container">
+        <form [formGroup]="registrationf" (ngSubmit)="submit()">
+
+            <div class="form-group">
+                
+                <input type="text" formControlName="fname" placeholder="First Name" class="fname">
+                First Name
+                <div *ngIf="registrationf.invalid &&(registrationf.dirty || registrationf.touched)">
+                    <span *ngIf="registrationf.controls['fname'].hasError('required')" class="text-danger">
+                    first name is required
+           
+                </span>
+                    <span *ngIf="registrationf.controls['fname'].hasError('minlength')" class="text-danger">
+                    min length is 3
+                    </span>
+                    <span *ngIf="registrationf.controls['fname'].hasError('maxlength')" class="text-danger">
+                    max length is 10
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" formControlName="lname" placeholder="Last Name" class="lname">
+                Last Name
+                <div *ngIf="registrationf.invalid &&(registrationf.dirty || registrationf.touched)">
+                    <span *ngIf="registrationf.controls['lname'].hasError('required')" class="text-danger">
+                    first name is required
+                    </span>
+                    <span *ngIf="registrationf.controls['lname'].hasError('minlength')" class="text-danger">
+                    min length is 3
+                    </span>
+                    <span *ngIf="registrationf.controls['lname'].hasError('maxlength')" class="text-danger">
+                    max length is 10
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" formControlName="phone" placeholder="Phone Number" class="phone">
+                Phone Number
+                <div *ngIf="registrationf.invalid &&(registrationf.dirty || registrationf.touched)">
+                    <span *ngIf="registrationf.controls['phone'].hasError('required')" class="text-danger">
+                    phone number is required
+                    </span>
+                    <span *ngIf="registrationf.controls['phone'].hasError('minlength')" class="text-danger">
+                    min length is 10
+                    </span>
+                    <span *ngIf="registrationf.controls['phone'].hasError('maxlength')" class="text-danger">
+                    max length is 13
+                    </span>\
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" formControlName="address" placeholder="Adress" class="address">
+                Address
+                <div *ngIf="registrationf.invalid &&(registrationf.dirty || registrationf.touched)">
+                    <span *ngIf="registrationf.controls['address'].hasError('required')" class="text-danger">
+                    address is required
+                    </span>
+                </div>  
+            </div>
+
+            <div class="form-group">
+                <input type="text" formControlName="email" placeholder="email" class="email">
+                Email-ID
+                <div *ngIf="registrationf.invalid &&(registrationf.dirty || registrationf.touched)">
+                    <span *ngIf="registrationf.controls['email'].hasError('required')" class="text-danger">
+                    email is required
+                    </span>
+                    <span *ngIf="registrationf.controls['email'].hasError('pattern')" class="text-danger">
+                    follow email pattern
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="submit" name="submit">
+            </div>
+
+        </form>
+    </div>
+</div>

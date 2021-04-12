@@ -1,0 +1,19 @@
+<table class="table table-striped table-bordered table-sm row-border hover" datatable>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address(city)</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+   <tbody>
+        <tr *ngFor="let data of httpdata">
+          <td>{{ data.name }}</td>
+          <td>{{data.address.city }}</td>
+          <td>{{ data.email }}</td>
+        </tr>
+    </tbody>
+    <tr>
+      <input type="search" (keyup)="filterDataByName()" [(ngModel)]="searchData" placeholder="search item" class="search">
+    </tr>
+</table>

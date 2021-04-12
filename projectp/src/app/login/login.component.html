@@ -1,0 +1,18 @@
+<div class="container">
+    <form [formGroup]="loginform" (ngSubmit)="submit()">
+
+        <div class="form-group">
+            <input type="text" formControlName="name" placeholder="Name" class="name">
+            Name
+        </div>
+
+        <div class="form-group">
+            <input type="password" formControlName="password" placeholder="Password" class="password">
+            Password
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="submit" name="submit">
+        </div>
+    </form> 
+</div>
